@@ -139,12 +139,11 @@
               h('h1', { className: 'text-3xl sm:text-5xl font-bold tracking-tight'}, `${DATA.name}`),
               h('p', { className: 'mt-2 text-lg text-slate-700'}, `${DATA.role} • ${DATA.location}`),
               h('p', { className: 'mt-5 text-slate-700 leading-relaxed'}, DATA.summary),
-              $1
+              h('div', { className: 'mt-6 flex flex-wrap gap-3'}, [
                 DATA.resumePdf && h('a', { href: DATA.resumePdf, download: true, className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition' }, [ h(FileDown, { size: 18 }), 'Download Resume (PDF, DE)' ]),
                 DATA.gradesPdf && h('a', { href: DATA.gradesPdf, target: '_blank', className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition' }, [ h(GraduationCap, { size: 18 }), 'View Grades (PDF, DE)' ]),
                 DATA.motivationPdf && h('a', { href: DATA.motivationPdf, target: '_blank', className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition' }, [ h(ExternalLink, { size: 18 }), 'Motivation Letter (PDF, DE)' ])
-              $2,
-                (DATA.gradesPdf && h('a', { href: DATA.gradesPdf, target: '_blank', className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition' }, [ h(GraduationCap, { size: 18 }), 'View Grades (PDF, DE)' ])))
+              ])
             ]),
             h('div', { className: 'aspect-square rounded-2xl border bg-white shadow-sm grid place-items-center' }, [
               h('span', { className: 'text-slate-400' }, 'Your Photo')
