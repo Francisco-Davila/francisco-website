@@ -39,7 +39,7 @@
       },
       resumePdf: 'assets/Lebenslauf_Francisco.pdf',
       gradesPdf: '', // e.g., 'assets/Zeugnisse.pdf'
-      motivationPdf: 'assets/Motivationsschreiben.pdf',
+      motivationPdf: 'assets/Motivationsschreiben-Allgemein.pdf',
       skills: [
         'C#','Java','Python','C','PHP','JavaScript','TypeScript','SQL (MySQL, SQLite, PL/SQL)','Prolog','Shell (Bash)','Linux',
         'Angular','Next.js','Quarkus','SAP','Arduino','Figma','Office 365',
@@ -55,33 +55,47 @@
         { title: 'AI-Powered Cyber Deception (Diploma Thesis)',
           description: 'Deception mechanisms and AI-assisted responses to detect/react to attack patterns.',
           tags: ['Cybersecurity','Deception','AI/ML','Anomaly Detection'],
-          links: {} },
+          links: {}, image: 'assets/thesis.png' },
         { title: 'Process Automation Toolkit — MAIT Austria (Intern, 2023)',
           description: 'C# & shell automation; tuned Java app startup & background process reliability.',
-          tags: ['C#','Shell','Java','Automation'], links: {} },
-        { title: 'Deception-based Attack Detection — Dynatrace (Intern, 2024)',
+          tags: ['C#','Shell','Java','Automation'], links: {}, image: 'assets/project1.png' },
+        /*{ title: 'Deception-based Attack Detection — Dynatrace (Intern, 2024)',
           description: 'Integrated deception for detection; explored AI-driven adaptation & reactions.',
-          tags: ['Security R&D','Deception','AI/ML'], links: {} },
+          tags: ['Security R&D','Deception','AI/ML'], links: {}, image: 'assets/project2.png' },
         { title: 'Service & Teamwork — GastroFighter & Easystaff',
           description: 'Customer-facing work; teamwork, responsibility, communication.',
-          tags: ['Soft Skills','Teamwork','Customer Service'], links: {} },
+          tags: ['Soft Skills','Teamwork','Customer Service'], links: {}, image: 'assets/service.png' },*/
       ]
     };
 
     const STRINGS = {
-      en: {
-        about: 'About', projects: 'Projects', education: 'Education', awards: 'Awards', contact: 'Contact',
-        lookingFor: "What I’m looking for", lookingCopy: 'Add a short note on the roles, stacks, or industries you prefer.',
-        resumeBtn: 'Download Resume (PDF, DE)', gradesBtn: 'View Grades (PDF, DE)', motivationBtn: 'Motivation Letter (PDF, DE)',
-        openTo: 'I’m open to roles and collaborations. Feel free to reach out!'
-      },
-      de: {
-        about: 'Über mich', projects: 'Projekte', education: 'Ausbildung', awards: 'Auszeichnungen', contact: 'Kontakt',
-        lookingFor: 'Wonach ich suche', lookingCopy: 'Kurzer Hinweis zu bevorzugten Rollen, Stacks oder Branchen.',
-        resumeBtn: 'Lebenslauf herunterladen (PDF, DE)', gradesBtn: 'Zeugnisse ansehen (PDF, DE)', motivationBtn: 'Motivationsschreiben (PDF, DE)',
-        openTo: 'Ich bin offen für Rollen und Kooperationen. Melden Sie sich gerne!'
-      }
-    };
+  en: {
+    about: 'About Me',
+    projects: 'Projects',
+    education: 'Education',
+    awards: 'Awards',
+    contact: 'Contact',
+    lookingFor: "My Career Focus",
+    lookingCopy: "I am seeking a challenging role in IT to leverage and grow my expertise in software development (Java/Python), network security, and SAP.",
+    resumeBtn: 'Download Resume (PDF, DE)',
+    gradesBtn: 'View Transcripts (PDF, DE)',
+    motivationBtn: 'Motivation Letter (PDF, DE)',
+    openTo: "I am open to new roles and collaborative projects. Let's connect and discuss how I can bring value to your team."
+  },
+  de: {
+    about: 'Über mich',
+    projects: 'Projekte',
+    education: 'Ausbildung',
+    awards: 'Auszeichnungen',
+    contact: 'Kontakt',
+    lookingFor: 'Meine Karriereausrichtung',
+    lookingCopy: 'Ich suche eine herausfordernde Position in der IT-Branche, um meine Kenntnisse in Softwareentwicklung (Java/Python), Netzwerksicherheit und SAP einzubringen und weiter auszubauen.',
+    resumeBtn: 'Lebenslauf herunterladen (PDF, DE)',
+    gradesBtn: 'Zeugnisse ansehen (PDF, DE)',
+    motivationBtn: 'Motivationsschreiben (PDF, DE)',
+    openTo: 'Ich bin offen für neue Rollen und Kooperationen. Nehmen Sie gerne Kontakt auf, um zu besprechen, wie ich einen Mehrwert für Ihr Team bringen kann.'
+  }
+};
 
     // --------------- React (UMD) ---------------
     const { createElement: h, useState, useEffect } = React;
@@ -187,7 +201,7 @@
                     h('span', { className: 'text-sm text-slate-500 dark:text-slate-400'}, a.year)
                   ])
                 ))
-              : h('p', { className: 'text-slate-500 dark:text-slate-400'}, 'Add awards you've received')
+              : h('p', { className: 'text-slate-500 dark:text-slate-400'}, 'Semifinals youth innovative')
           ])
         ])
       ]);
