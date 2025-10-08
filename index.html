@@ -28,6 +28,12 @@
       location: 'Leonding, Austria',
       email: 'francisco.jose.davila.mendez@gmail.com',
       phone: '+43 677 62360167',
+      resumePdf: 'assets/Lebenslauf_Francisco.pdf',
+      motivationPdf: 'assets/Motivationsschreiben-Allgemein.pdf',
+      sapCertPdf: 'assets/Francisco-Davila-2025-SAP.pdf',           // SAP Zertifikat
+      schoolReportPdf: 'assets/Francisco-Davila-2025-Zeugnis.pdf',  // Schulzeugnis/Noten
+      maturaPdf: 'assets/Matura-Zeugnis-2025.pdf',                  // Matura-Zeugnis
+
       social: {
         github: 'https://github.com/Francisco-Davila',
         linkedin: 'https://www.linkedin.com/in/francisco-davila-mendez-a823732a2/',
@@ -79,7 +85,10 @@
     resumeBtn: 'Download Resume (PDF, DE)',
     gradesBtn: 'View Transcripts (PDF, DE)',
     motivationBtn: 'Motivation Letter (PDF, DE)',
-    openTo: "I am open to new roles and collaborative projects. Let's connect and discuss how I can bring value to your team."
+    openTo: "I am open to new roles and collaborative projects. Let's connect and discuss how I can bring value to your team.",
+    sapBtn: 'SAP Certificate (PDF)',
+    schoolReportBtn: 'School Report / Grades (PDF, DE)',
+    maturaBtn: 'Matura Certificate (PDF, DE)'
   },
   de: {
     about: 'Über mich',
@@ -92,7 +101,10 @@
     resumeBtn: 'Lebenslauf herunterladen (PDF, DE)',
     gradesBtn: 'Zeugnisse ansehen (PDF, DE)',
     motivationBtn: 'Motivationsschreiben (PDF, DE)',
-    openTo: 'Ich bin offen für neue Rollen und Kooperationen. Nehmen Sie gerne Kontakt auf, um zu besprechen, wie ich einen Mehrwert für Ihr Team bringen kann.'
+    openTo: 'Ich bin offen für neue Rollen und Kooperationen. Nehmen Sie gerne Kontakt auf, um zu besprechen, wie ich einen Mehrwert für Ihr Team bringen kann.',
+    sapBtn: 'SAP-Zertifikat (PDF)',
+    schoolReportBtn: 'Zeugnis / Noten (PDF, DE)',
+    maturaBtn: 'Matura-Zeugnis (PDF, DE)'
   }
 };
 
@@ -141,9 +153,33 @@
               h('p', { className: 'mt-2 text-lg text-slate-700 dark:text-slate-300'}, `${DATA.role} • ${DATA.location}`),
               h('p', { className: 'mt-5 text-slate-700 dark:text-slate-300 leading-relaxed'}, DATA.summaries[lang]),
               h('div', { className: 'mt-6 flex flex-wrap gap-3'}, [
-                DATA.resumePdf && h('a', { href: DATA.resumePdf, download: true, className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-600 text-white hover:bg-blue-700' }, STRINGS[lang].resumeBtn),
-                DATA.gradesPdf && h('a', { href: DATA.gradesPdf, target: '_blank', className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700' }, STRINGS[lang].gradesBtn),
-                DATA.motivationPdf && h('a', { href: DATA.motivationPdf, target: '_blank', className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700' }, STRINGS[lang].motivationBtn)
+                DATA.resumePdf && h('a', {
+                  href: DATA.resumePdf, download: true,
+                  className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-600 text-white hover:bg-blue-700'
+                }, STRINGS[lang].resumeBtn),
+
+                DATA.motivationPdf && h('a', {
+                  href: DATA.motivationPdf, target: '_blank', rel: 'noopener noreferrer',
+                  className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700'
+                }, STRINGS[lang].motivationBtn),
+
+                // NEU: SAP-Zertifikat
+                DATA.sapCertPdf && h('a', {
+                  href: DATA.sapCertPdf, target: '_blank', rel: 'noopener noreferrer',
+                  className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700'
+                }, STRINGS[lang].sapBtn),
+
+                // NEU: Schulzeugnis / Noten
+                DATA.schoolReportPdf && h('a', {
+                  href: DATA.schoolReportPdf, target: '_blank', rel: 'noopener noreferrer',
+                  className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700'
+                }, STRINGS[lang].schoolReportBtn),
+
+                // NEU: Matura
+                DATA.maturaPdf && h('a', {
+                  href: DATA.maturaPdf, target: '_blank', rel: 'noopener noreferrer',
+                  className: 'inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow transition bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700'
+                }, STRINGS[lang].maturaBtn)
               ])
             ]),
             h('div', { className: 'aspect-square rounded-2xl overflow-hidden border bg-white shadow-sm dark:bg-slate-800 dark:border-slate-700' }, [
