@@ -34,8 +34,12 @@
         website: ''
       },
       summaries: {
-        en: `HTL Leonding graduate focused on cybersecurity, cryptography, data science & AI. Hands-on with C#, Java, Python, JavaScript/TypeScript and SQL; experienced across Linux and modern frameworks. Thrives on learning new technologies quickly, successfully tackling unfamiliar challenges like Rust programming and implementing web-based terminal solutions under tight deadlines. Internship experience at MAIT Austria and Dynatrace building automation, deception-based detection, and AI-driven responses.`,
-        de: `HTL-Leonding-Absolvent mit Fokus auf Cybersecurity, Kryptographie, Data Science & KI. Praxis mit C#, Java, Python, JavaScript/TypeScript und SQL; routiniert in Linux und modernen Frameworks. Lernt neue Technologien schnell und bewältigt auch unbekannte Herausforderungen wie Rust-Programmierung oder die Implementierung webbasierter Terminal-Lösungen unter Zeitdruck erfolgreich. Praktika bei MAIT Austria und Dynatrace: Automatisierung, Deception-basierte Erkennung und KI-gestützte Reaktionen.`
+        en: `HTL Leonding graduate focused on cybersecurity, cryptography, data science & AI. Hands-on with C#, Java, Python, JavaScript/TypeScript and SQL; experienced across Linux and modern frameworks. Internship experience at MAIT Austria and Dynatrace building automation, deception-based detection, and AI-driven responses.`,
+        de: `HTL-Leonding-Absolvent mit Fokus auf Cybersecurity, Kryptographie, Data Science & KI. Praxis mit C#, Java, Python, JavaScript/TypeScript und SQL; routiniert in Linux und modernen Frameworks. Praktika bei MAIT Austria und Dynatrace: Automatisierung, Deception-basierte Erkennung und KI-gestützte Reaktionen.`
+      },
+      aboutme: {
+        en: `I am seeking a challenging role in IT to leverage and grow my expertise in software development (Java/Python), network security, and SAP. One thing I truly love is learning new technologies - at school I was often assigned tasks nobody else wanted, like suddenly programming in Rust or implementing a full terminal into a website for Docker connectivity and control. When I encounter unfamiliar technologies, I'm a quick learner who can get up to speed rapidly - I even had to learn JavaScript and TypeScript over a weekend and somehow figured it out successfully.`,
+        de: `Ich suche eine herausfordernde Position in der IT-Branche, um meine Kenntnisse in Softwareentwicklung (Java/Python), Netzwerksicherheit und SAP einzubringen und weiter auszubauen. Eine Sache, die ich wirklich liebe, ist das Lernen neuer Technologien - in der Schule wurden mir oft Aufgaben zugeteilt, die niemand anders übernehmen wollte, wie plötzliches Programmieren in Rust oder die Implementierung eines vollständigen Terminals in eine Website für Docker-Konnektivität und -Steuerung. Wenn ich auf unbekannte Technologien treffe, bin ich ein schneller Lerner, der sich rasch einarbeiten kann - ich musste sogar JavaScript und TypeScript an einem Wochenende lernen und habe es irgendwie erfolgreich gemeistert.`
       },
       resumePdf: 'assets/Lebenslauf_Francisco.pdf',
       gradesPdf: '', // e.g., 'assets/Zeugnisse.pdf'
@@ -205,7 +209,7 @@
       h(Section, { id: 'about', title: STRINGS[lang].about }, [
         h('div', { className: 'grid md:grid-cols-3 gap-6'}, [
           h('div', { className: 'md:col-span-2 border rounded-2xl p-6 bg-white shadow-sm dark:bg-slate-900 dark:border-slate-800' }, [
-            h('p', { className: 'leading-relaxed text-slate-700 dark:text-slate-300'}, DATA.summaries[lang])
+            h('p', { className: 'leading-relaxed text-slate-700 dark:text-slate-300'}, DATA.aboutme[lang])
           ]),
           h('div', { className: 'border rounded-2xl p-6 bg-white shadow-sm dark:bg-slate-900 dark:border-slate-800' }, [
             h('h3', { className: 'text-lg font-semibold mb-3 dark:text-white'}, 'Skills'),
